@@ -10,7 +10,7 @@
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
 	<collectiontypes>
-		<collectiontype code="BandCollection" elementtype="Band" autocreate="true" generate="false"/>
+		<collectiontype code="BandCollection" elementtype="Band" autocreate="true" generate="false" type="set"/>
 	</collectiontypes>
 
 	<enumtypes>
@@ -97,6 +97,26 @@
 			 </attributes>
 		 </itemtype>
 
+		<itemtype generate="true" code="AllTypeAttributesType" autocreate="true">
+			<deployment table="AllTypeAttributesTypes" typecode="30270"/>
+			<attributes>
+				<attribute qualifier="musicType" type="MusicType">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="concert" type="Product">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="bands" type="BandCollection">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="bandsMap" type="BandMap">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="rockBandConcerts" type="Product2RockBand">
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 	
 </items>
