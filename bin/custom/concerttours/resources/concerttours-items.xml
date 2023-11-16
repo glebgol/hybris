@@ -11,6 +11,7 @@
 
 	<collectiontypes>
 		<collectiontype code="BandCollection" elementtype="Band" autocreate="true" generate="false" type="set"/>
+		<collectiontype code="YearsCollection" elementtype="java.lang.Integer" autocreate="true" generate="false"/>
 	</collectiontypes>
 
 	<enumtypes>
@@ -18,13 +19,18 @@
 			<value code="openair" />
 			<value code="indoor" />
 	    </enumtype>
-	 
+
 	    <enumtype code="MusicType" autocreate="true" generate="true" dynamic="true">
 	    </enumtype>
+
+		<enumtype code="MyCompany" autocreate="true" generate="true" dynamic="false">
+			<value code="ExpertSoft"/>
+		</enumtype>
 	</enumtypes>
 
 	<maptypes>
 		<maptype code="BandMap" argumenttype="MusicType" returntype="Band" autocreate="true"/>
+		<maptype code="InfoMap" argumenttype="java.lang.String" returntype="java.lang.String"/>
 	</maptypes>
 
 	<relations>
@@ -47,7 +53,7 @@
 			</targetElement>
 	    </relation>
 	</relations>
-    	
+
 	<itemtypes>
 		<itemtype generate="true" code="Product" autocreate="false">
 		  <attributes>
@@ -57,7 +63,7 @@
 		    </attribute>
 		  </attributes>
 		</itemtype>
-		
+
 		<itemtype generate="true" code="Band" autocreate="true">
 		    <deployment table="Bands" typecode="30268" />
 		    <attributes>
@@ -79,7 +85,7 @@
 			</attribute>
 		    </attributes>
 		</itemtype>
-		
+
 		<itemtype generate="true" code="Concert" extends="VariantProduct" autocreate="true">
 			<attributes>
 			    <attribute qualifier="venue" type="java.lang.String">
@@ -97,22 +103,49 @@
 			 </attributes>
 		 </itemtype>
 
-		<itemtype generate="true" code="AllTypeAttributesType" autocreate="true">
-			<deployment table="AllTypeAttributesTypes" typecode="30270"/>
+		<itemtype generate="true" code="Ticket" autocreate="true">
+			<deployment table="Tickets" typecode="30274"/>
 			<attributes>
-				<attribute qualifier="musicType" type="MusicType">
+				<attribute qualifier="info" type="java.lang.String">
 					<persistence type="property" />
 				</attribute>
-				<attribute qualifier="concert" type="Product">
+				<attribute qualifier="price" type="java.lang.Integer">
 					<persistence type="property" />
 				</attribute>
-				<attribute qualifier="bands" type="BandCollection">
+			</attributes>
+		</itemtype>
+
+		<itemtype generate="true" code="Member" autocreate="true">
+			<deployment table="Member" typecode="30271"/>
+			<attributes>
+				<attribute qualifier="info" type="java.lang.String">
 					<persistence type="property" />
 				</attribute>
-				<attribute qualifier="bandsMap" type="BandMap">
+				<attribute qualifier="price" type="java.lang.Integer">
 					<persistence type="property" />
 				</attribute>
-				<attribute qualifier="rockBandConcerts" type="Product2RockBand">
+			</attributes>
+		</itemtype>
+
+		<itemtype generate="true" code="MyCustomAllTypeAttribute" autocreate="true">
+			<deployment table="MyCustomAllTypeAttribute" typecode="30275"/>
+			<attributes>
+				<attribute qualifier="name" type="java.lang.String">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="company" type="MyCompany">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="ticket" type="Ticket">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="years" type="YearsCollection">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="infoMap" type="InfoMap">
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="bandsMusic" type="Band2MusicType">
 					<persistence type="property" />
 				</attribute>
 			</attributes>
