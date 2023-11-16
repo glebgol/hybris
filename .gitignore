@@ -72,6 +72,7 @@ idea-module-files/
 .externalToolBuilders
 .springBeans
 .pmd
+hybris4intellij.properties
 
 ##############
 # Diff Files #
