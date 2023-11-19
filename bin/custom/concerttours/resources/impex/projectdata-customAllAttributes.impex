@@ -1,0 +1,11 @@
+INSERT_UPDATE Ticket;info[unique=true]
+                    ;ticket1
+
+INSERT_UPDATE MusicType;code[unique=true]
+                       ;rock
+
+INSERT_UPDATE Band;code[unique=true];types(code)
+                  ;A001;rock
+
+INSERT_UPDATE MyCustomAllTypeAttribute;name[unique=true];company(code);ticket(info);years;infoMap;bandsMusic(source(code), target(code))
+                                      ;name123;ExpertSoft;ticket1;1999, 2000, 2004;hello->world,123->abc;A001:rock
