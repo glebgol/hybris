@@ -10,31 +10,24 @@
 			xsi:noNamespaceSchemaLocation="items.xsd">
 
 	<itemtypes>
-<!--
 		<itemtype generate="true"
-		   code="MyProduct"
-		   jaloclass="org.training.jalo.MyProduct"
-		   extends="Product"
-		   autocreate="true"
-	   >
+				  code="ContactRequest"
+				  jaloclass="org.training.jalo.ContactRequest"
+				  extends="GenericItem"
+				  autocreate="true">
+			<deployment table="ContactRequests" typecode="30276"/>
 			<attributes>
-				<attribute qualifier="myExampleInitialStringField" type="java.lang.String">
-					<description>My Example Initial String Value</description>
+				<attribute qualifier="message" type="java.lang.String">
+					<description>Message</description>
 					<modifiers initial="true"/>
 					<persistence type="property"/>
 				</attribute>
-
-				<attribute qualifier="myExampleBooleanField" type="java.lang.Boolean">
-					<description>Example Initial Boolean Field</description>
-               <persistence type="property"/>
-				</attribute>
-
-				<attribute qualifier="media" type="Media">
+				<attribute qualifier="sender" type="java.lang.String">
+					<description>Sender</description>
+					<modifiers initial="true"/>
 					<persistence type="property"/>
 				</attribute>
-
 			</attributes>
 		</itemtype>
--->
 	</itemtypes>
 </items>
