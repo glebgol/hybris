@@ -37,4 +37,9 @@
     </bean>
 
     <alias alias="productService" name="trainingProductService"/>
+
+    <bean id="contactRequestFacade"
+          class="org.training.facade.impl.DefaultContactRequestFacade">
+        <constructor-arg name="contactRequestService" ref="contactRequestService"/>
+    </bean>
 </beans>
