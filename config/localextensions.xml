@@ -5,6 +5,7 @@
     <!-- Your new extension -->
     <extension name="concerttours"/>
     <extension name="myextension"/>
+    <extension name="training"/>
   </extensions>
 </hybrisconfig>
 

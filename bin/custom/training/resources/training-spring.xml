@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="trainingSystemSetup" class="org.training.setup.TrainingSystemSetup">
+        <!-- constructor arg injection example -->
+        <constructor-arg ref="trainingService"/>
+    </bean>
+
+    <bean id="trainingService" class="org.training.service.impl.DefaultTrainingService">
+        <!-- setter injection example -->
+        <property name="modelService" ref="modelService"/>
+        <property name="mediaService" ref="mediaService"/>
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="contactRequestService"
+          class="org.training.service.impl.DefaultContactRequestService"  >
+        <property name="contactRequestDao" ref="contactRequestDao"/>
+    </bean>
+
+    <bean id="contactRequestDao"
+          class="org.training.dao.impl.DefaultContactRequestDao"
+          parent="abstractItemDao"  />
+
+    <bean id="trainingProductService" class="org.training.service.impl.TrainingProductServiceImpl"
+          parent="defaultProductService">
+        <property name="flexibleSearchService" ref="defaultFlexibleSearchService"/>
+    </bean>
+
+    <alias alias="productService" name="trainingProductService"/>
+
+    <bean id="contactRequestFacade"
+          class="org.training.facade.impl.DefaultContactRequestFacade">
+        <constructor-arg name="contactRequestService" ref="contactRequestService"/>
+    </bean>
+</beans>

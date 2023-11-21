@@ -6,9 +6,3 @@ INSERT_UPDATE Band;code[unique=true];name;albumSales;history
                   ;A002;Sirken;2000;A cappella singing group based in Munich; an uplifting blend of traditional and contemporaneous songs
                   ;A005;The Choir;49000;Enthusiastic, noisy gospel choir singing traditional gospel songs from the deep south
                   ;A007;The Quiet;1200;English choral society specialising in beautifully arranged, soothing melodies and songs
-
-INSERT_UPDATE Band;code[unique=true];types(code)
-;A001;rock
-
-INSERT_UPDATE MyCustomAllTypeAttribute;name[unique=true];company(code);ticket(info);years;infoMap;bandsMusic(source(code), target(code))
-;name123;ExpertSoft;ticket1;1999, 2000, 2004;hello->world,123->abc;A001:rock
