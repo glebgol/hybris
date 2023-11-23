@@ -150,6 +150,28 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+		<itemtype code="ClientName"
+				  extends="GenericItem"
+				  jaloclass="de.hybris.tutorial.jalo.ClientName"
+				  autocreate="true"
+				  generate="true">
+			<deployment table="ClientName" typecode="30277"/>
+			<attributes>
+				<attribute autocreate="true" qualifier="firstName" type="java.lang.String">
+					<modifiers read="true" write="true" search="false" optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute autocreate="true" qualifier="lastName" type="java.lang.String">
+					<modifiers read="true" write="true" search="false" optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="longName">
+					<persistence type="dynamic" attributeHandler="dynamicAttributesStringSample"/>
+					<modifiers read="true" write="true" optional="true" unique="false"/>
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 	
 </items>
