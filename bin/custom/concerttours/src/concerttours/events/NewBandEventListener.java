@@ -26,9 +26,8 @@ public class NewBandEventListener extends AbstractEventListener<AfterItemCreatio
         if (event != null && event.getSource() != null)
         {
             final Object object = modelService.get(event.getSource());
-            if (object instanceof BandModel)
+            if (object instanceof BandModel band)
             {
-                final BandModel band = (BandModel) object;
                 final String headline = String.format(NEW_BAND_HEADLINE, band.getName());
                 final String content = String.format(NEW_BAND_CONTENT, band.getName());
                 final NewsModel news = modelService.create(NewsModel.class);
