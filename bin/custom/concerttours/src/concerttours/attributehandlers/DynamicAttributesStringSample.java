@@ -1,4 +1,4 @@
-package concerttours.handlers;
+package concerttours.attributehandlers;
 
 import de.hybris.platform.servicelayer.model.attribute.DynamicAttributeHandler;
 import de.hybris.tutorial.model.ClientNameModel;

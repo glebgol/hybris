@@ -40,5 +40,7 @@
         <property name = "productService" ref = "productService" />
     </bean>
 
-    <bean id="dynamicAttributesStringSample" class="concerttours.handlers.DynamicAttributesStringSample"/>
+    <bean id="dynamicAttributesStringSample" class="concerttours.attributehandlers.DynamicAttributesStringSample"/>
+
+    <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
 </beans>
