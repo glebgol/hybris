@@ -69,4 +69,13 @@
         <property name="newsService" ref="newsService" />
         <property name="configurationService" ref="configurationService" />
     </bean>
+
+    <bean id="tokenDao" class="concerttours.daos.impl.DefaultTokenDao">
+        <constructor-arg ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="generateNewTokenValueJob" class="concerttours.jobs.GenerateNewTokenValueJob" parent="abstractJobPerformable">
+        <constructor-arg ref="tokenDao"/>
+        <constructor-arg ref="modelService"/>
+    </bean>
 </beans>

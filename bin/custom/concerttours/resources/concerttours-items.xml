@@ -213,6 +213,16 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+		<itemtype generate="true" code="Token" autocreate="true">
+			<deployment table="Token" typecode="30279" />
+			<attributes>
+				<attribute qualifier="token" type="java.lang.String">
+					<description>token</description>
+					<persistence type="property" />
+				</attribute>
+			</attributes>
+		</itemtype>
 	</itemtypes>
 	
 </items>
