@@ -32,7 +32,7 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
 
 INSERT_UPDATE Band;code[unique=true];name;albumSales;image(qualifier)
                   ;A001;yRock;1000000;yRockImage
-                  ;A006;yBand;;yBandImage
+                  ;A006;yBand;1;yBandImage
                   ;A003;yJazz;7;yJazzImage
                   ;A004;Banned;427;BannedImage
                   ;A002;Sirken;2000;SirkenImage
