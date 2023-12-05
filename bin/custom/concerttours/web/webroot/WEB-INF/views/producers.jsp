@@ -5,8 +5,7 @@
     <title>Producers</title>
 </head>
 <body>
-${producers}
-
+<h1>Producers</h1>
 <c:forEach var="producer" items="${producers}">
     <li>
         <a href="../concerttours/producers/${producer.name}">${producer.name}</a>

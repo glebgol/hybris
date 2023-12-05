@@ -16,7 +16,7 @@ public class ProducersController {
     private final CatalogVersionService catalogVersionService;
     private final ProducerFacade producerFacade;
 
-    private static final String CATALOG_ID = "Default";
+    private static final String CATALOG_ID = "concertToursProductCatalog";
     private static final String CATALOG_VERSION_NAME = "Online";
 
     public ProducersController(CatalogVersionService catalogVersionService, ProducerFacade producerService) {
