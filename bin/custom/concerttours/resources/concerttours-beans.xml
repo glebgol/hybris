@@ -41,4 +41,9 @@
 		<property name = "description" type = "String" />
 		<property name = "concerts" type="java.util.List&lt;concerttours.data.ConcertSummaryData&gt;"/>
 	</bean>
+
+	<bean class="concerttours.data.ProducerData">
+		<property name="name" type="String" />
+		<property name="tours" type="java.util.Set&lt;String&gt;"/>
+	</bean>
 </beans>

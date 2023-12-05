@@ -1,0 +1,4 @@
+INSERT_UPDATE Producer; name[unique = true]; products(code)
+                      ; Ivan               ; 20170101,20170103,20170105
+                      ; Petr               ; 20170102
+                      ; Mary               ; 20170104,20170106

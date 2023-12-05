@@ -39,7 +39,7 @@
 
     <alias name = "defaultTourFacade" alias = "tourFacade" />
     <bean id = "defaultTourFacade" class ="concerttours.facades.impl.DefaultTourFacade" >
-        <property name = "productService" ref = "productService" />
+        <constructor-arg name = "productService" ref = "productService" />
     </bean>
 
     <bean id="dynamicAttributesStringSample" class="concerttours.attributehandlers.DynamicAttributesStringSample"/>
@@ -77,5 +77,17 @@
     <bean id="generateNewTokenValueJob" class="concerttours.jobs.GenerateNewTokenValueJob" parent="abstractJobPerformable">
         <constructor-arg ref="tokenDao"/>
         <constructor-arg ref="modelService"/>
+    </bean>
+
+    <bean id="producerDAO" class="concerttours.daos.impl.DefaultProducerDao">
+        <constructor-arg ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="producerService" class="concerttours.service.impl.DefaultProducerService">
+        <constructor-arg ref="producerDAO"/>
+    </bean>
+
+    <bean id="producerFacade" class="concerttours.facades.impl.DefaultProducerFacade">
+        <constructor-arg ref="producerService"/>
     </bean>
 </beans>
