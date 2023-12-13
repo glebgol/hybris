@@ -1,0 +1,2 @@
+INSERT_UPDATE SearchRestriction; code[unique = true]                 ; name[lang = en]          ; query                                                                                                 ; principal(UID); restrictedType(code); active; generate
+                               ; NewsOnlineCatalogVersionRestriction ; NewsOnlineCatalogVersion ; {catalogVersion} IN ({{SELECT {cv.pk} from {CatalogVersion AS cv} WHERE {cv.version} LIKE 'Online'}}) ; admin         ; News                ; true  ; true
