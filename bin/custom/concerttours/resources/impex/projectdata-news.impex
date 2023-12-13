@@ -1,0 +1,11 @@
+$productCatalog = concertToursProductCatalog
+$onlineCatalogVersion = catalogversion(catalog(id[default = $productCatalog]), version[default = 'Online'])[unique = true, default = $productCatalog:Online]
+$stagedCatalogVersion = catalogversion(catalog(id[default = 'Default']), version[default = 'Staged'])[unique = true, default = Default:Staged]
+
+INSERT_UPDATE News; headline[unique = true]; content  ; $onlineCatalogVersion
+                  ; headline1              ; content1 ;
+                  ; headline2              ; content2 ;
+
+INSERT_UPDATE News; headline[unique = true]; content  ; $stagedCatalogVersion
+                  ; headline3              ; content3 ;
+                  ; headline4              ; content4 ;
